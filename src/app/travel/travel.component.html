@@ -1,0 +1,15 @@
+<h2>{{ name }}'s Favorite Travel Destinations</h2>
+
+<input #newCountry />
+<button (click)="addCountry(newCountry.value)">Add Country</button>
+
+<p *ngIf="countries.length == 0">
+    {{ name }} has no favorite travel destinations! 
+</p>
+
+<ol>
+    <li *ngFor="let country of countries; let i = index">
+        {{ country }}
+        <button (click)="removeCountry(i)">Remove</button>
+    </li>
+</ol>
